@@ -13,10 +13,10 @@ export const PLATFORM_CREATOR_ADDRESS = new PublicKey(
 export const EXPLORER_URL = 'https://explorer.gamba.so'
 
 // Platform URL - Appears in ShareModal
-export const PLATFORM_SHARABLE_URL = 'play.gamba.so'
+export const PLATFORM_SHARABLE_URL = 'https://masiki.vercel.app/'
 
 // Creator fee (in %)
-export const PLATFORM_CREATOR_FEE = 0.01 // 1% !!max 5%!!
+export const PLATFORM_CREATOR_FEE = 0.04 // 1% !!max 5%!!
 
 // Jackpot fee (in %)
 export const PLATFORM_JACKPOT_FEE = 0.001 // 0.1%
@@ -39,16 +39,10 @@ const lp = (tokenMint: PublicKey | string, poolAuthority?: PublicKey | string): 
  * For private pools, add the creator of the Liquidity Pool as a second argument
  */
 export const POOLS = [
-  // Fake token:
-  lp(FAKE_TOKEN_MINT),
   // SOL:
   lp('So11111111111111111111111111111111111111112'),
   // USDC:
-  lp('EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'),
-  // Wormhole:
-  lp('85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ'),
-  //private pool example (mint + authority)
-  lp('So11111111111111111111111111111111111111112', 'Fki4Yah4ZXvFmDUw8WspxRAEmfERPth7PPEwPYt3bior'),
+  lp('EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v')
 ]
 
 // The default token to be selected
@@ -108,4 +102,4 @@ export const TOKEN_METADATA_FETCHER = (
 )()
 
 export const ENABLE_LEADERBOARD = true 
-export const ENABLE_TROLLBOX = true // Requires setup in vercel (check tutorial in discord)
+export const ENABLE_TROLLBOX = false // Requires setup in vercel (check tutorial in discord)
