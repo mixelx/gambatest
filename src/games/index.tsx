@@ -2,20 +2,10 @@ import { GameBundle } from 'gamba-react-ui-v2'
 import React from 'react'
 
 export const GAMES: GameBundle[] = [
-  // {
-  //   id: 'example',
-  //   meta: {
-  //     background: '#00ffe1',
-  //     name: 'Example',
-  //     image: '#',
-  //     description: '',
-  //   },
-  //   app: React.lazy(() => import('./ExampleGame')),
-  // },
   {
     id: 'dice',
     meta: {
-      background: '#ff6490',
+      background: 'linear-gradient(to right, #355c7d, #6c5b7b, #c06c84)',
       name: 'Dice',
       image: '/games/dice.png',
       description: `

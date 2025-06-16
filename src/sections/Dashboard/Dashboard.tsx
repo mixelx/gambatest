@@ -1,9 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
 import { SlideSection } from '../../components/Slider'
 import { GAMES } from '../../games'
 import { GameCard } from './GameCard'
-import { WelcomeBanner } from './WelcomeBanner'
+import GameGrid from "./GameGrid"
+import styled from "styled-components";
 
 export function GameSlider() {
   return (
@@ -17,37 +17,24 @@ export function GameSlider() {
   )
 }
 
-const Grid = styled.div`
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  @media (min-width: 800px) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+const GamesSection = styled.section`
+  /* если хотите дополнительное пространство сверху/снизу секции */
+  padding: 2rem 0 4rem;
 `
 
-export function GameGrid() {
-  return (
-    <Grid>
-      {GAMES.map((game) => (
-        <GameCard key={game.id} game={game} />
-      ))}
-    </Grid>
-  )
-}
+const Title = styled.h2`
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  /* увеличиваем расстояние до грида */
+  margin-bottom: 2.5rem;
+`
 
 export default function Dashboard() {
-  return (
-    <>
-      <WelcomeBanner />
-      <h2 style={{ textAlign: 'center' }}>Games</h2>
-      <GameGrid />
-    </>
-  )
+    return (
+        <GamesSection id="games">
+            <Title>Games</Title>
+            <GameGrid />
+        </GamesSection>
+    )
 }

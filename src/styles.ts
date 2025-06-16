@@ -1,4 +1,38 @@
 import styled from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+      /* Два слоя фона: градиент + картинка */
+      background-image:
+          /* 1. градиент: от черного к прозрачному за 600px вниз */
+              linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 600px),
+                  /* 2. сама картинка */
+              url('/background.png');
+
+      /* Повторения нет, центровать */
+      background-repeat: no-repeat, no-repeat;
+      background-position: top center, center center;
+      /* Градиент растягивается по ширине, высота auto; картинка — cover */
+      background-size: 100% auto, cover;
+      /* Градиент скроллится вместе со страницей, картинка фиксирована */
+      background-attachment: scroll, fixed;
+
+      color: #fff;
+      font-family: sans-serif;
+  }
+
+  /* сбросим фон у основных контейнеров, чтобы не перекрывали */
+  #root > * {
+    background-color: transparent;
+  }
+`;
+
 
 export const MainWrapper = styled.div`
   position: relative;
